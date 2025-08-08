@@ -39,3 +39,5 @@ cp target/helloWorld.war $INSTALL_DIR/tomcat/webapps/
 # Start Tomcat
 tomcatdown
 tomcatup
+
+#Test log out in GitHub
