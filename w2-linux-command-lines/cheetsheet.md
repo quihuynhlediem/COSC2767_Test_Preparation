@@ -233,3 +233,14 @@ open .                  # Open current directory in Finder
 - `Tab` - Auto-complete
 - `!!` - Repeat last command
 - `!n` - Repeat command number n from history
+
+## Download Online Resources
+**Specific file**
+```bash
+curl https://www.gutenberg.org/files/100/100-0.txt > shakespeare.txt
+```
+
+**Specific file**
+```bash
+curl -L -O https://github.com/TomHuynhSG/public_datasets/blob/master/small_cat_dog_dataset.zip?raw=true
+```
