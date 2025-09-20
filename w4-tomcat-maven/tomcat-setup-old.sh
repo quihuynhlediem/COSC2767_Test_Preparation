@@ -14,7 +14,7 @@ echo M2_HOME=/opt/maven >> .bash_profile
 echo M2=/opt/maven/bin >> .bash_profile
 echo JAVA_HOME=/usr/lib/jvm/java-17-amazon-corretto.x86_64 >> .bash_profile
 echo 'PATH=$PATH:$HOME/bin:$JAVA_HOME:$M2_HOME:$M2' >> .bash_profile
-echo export PATH >> .bash_profile
+echo export PATH M2_HOME M2 JAVA_HOME >> .bash_profile
 
 # Reset bash_profile
 source .bash_profile
