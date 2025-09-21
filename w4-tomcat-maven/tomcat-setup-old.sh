@@ -1,6 +1,6 @@
 # ~
 # Install Java
-yum install java-17-amazon-corretto
+yum install -y java-17-amazon-corretto
 
 # Install Maven
 cd /opt
@@ -10,14 +10,14 @@ mv apache-maven-3.9.11 maven
 
 # Set up environment variables
 cd ~
-echo M2_HOME=/opt/maven >> .bash_profile
-echo M2=/opt/maven/bin >> .bash_profile
-echo JAVA_HOME=/usr/lib/jvm/java-17-amazon-corretto.x86_64 >> .bash_profile
-echo 'PATH=$PATH:$HOME/bin:$JAVA_HOME:$M2_HOME:$M2' >> .bash_profile
-echo export PATH M2_HOME M2 JAVA_HOME >> .bash_profile
+echo M2_HOME=/opt/maven >> ~/.bash_profile
+echo M2=/opt/maven/bin >> ~/.bash_profile
+echo JAVA_HOME=/usr/lib/jvm/java-17-amazon-corretto.x86_64 >> ~/.bash_profile
+echo 'PATH=$PATH:$HOME/bin:$JAVA_HOME:$M2_HOME:$M2' >> ~/.bash_profile
+echo export PATH M2_HOME M2 JAVA_HOME >> ~/.bash_profile
 
 # Reset bash_profile
-source .bash_profile
+source ~/.bash_profile
 
 # Install Tomcat
 cd /opt

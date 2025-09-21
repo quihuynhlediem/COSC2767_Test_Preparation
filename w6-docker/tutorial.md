@@ -47,6 +47,20 @@ docker start <container_name>
 docker build -t <image-name> <Dockerfile-location> 
 ```
 
-## Integrate with Jenkins
+## Integrate with Jenkins 
+**Prequitesite**: Add user dockeradmin
+0. Add a Dockerfile to /home/dockeradmin
 1. Plugins: Publish over SSH
-2. 
+2. System: Add server
+<img src="./images/ssh-configure.png">
+3. Job Configure - Add server and execute shell
+```bash
+cd /home/dockeradmin
+
+docker kill $(docker ps -q)
+docker system prune -f
+
+docker build -t tomcat:v2 .
+docker run -d --name tomcat-container-final -p 8087:8080 tomcat:v2 
+```
+<img src="./images/job-configure-for-ssh.png">
