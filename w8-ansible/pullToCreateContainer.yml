@@ -1,0 +1,18 @@
+---
+- hosts: dockerserver
+
+  tasks:
+    - name: stop the existing container
+      command: docker stop mywebapp-container
+      ignore_errors: yes
+
+    - name: remove the existing container
+      command: docker rm mywebapp-container
+      ignore_errors: yes
+
+    - name: remove the existing image
+      command: docker rmi quihuynh/myapp:latest
+      ignore_errors: yes
+
+    - name: create docker container by using the image on Dockerhub
+      command: docker run -d --name mywebapp-container -p 8082:8080 quihuynh/myapp:latest
